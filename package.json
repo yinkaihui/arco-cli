@@ -8,7 +8,8 @@
     "format": "prettier --config --write \"packages/**/*.{js,jsx,ts,tsx}\"",
     "eslint": "eslint packages/ --fix --cache --quiet --ext .js,.jsx,.ts,.tsx",
     "stylelint": "stylelint 'packages/**/*.less' --fix --cache",
-    "preRelease": "lerna run clean && lerna run build"
+    "preRelease": "lerna run clean && lerna run build",
+    "publish:test-version": "node ./scripts/replace-pkg-name.js && node ./scripts/release-version.js"
   },
   "dependencies": {
     "@babel/cli": "^7.19.3",
@@ -26,6 +27,7 @@
     "babel-plugin-ramda": "^2.1.1",
     "chalk": "^4.1.2",
     "fs-extra": "^10.1.0",
+    "glob": "^8.0.3",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
